@@ -308,7 +308,7 @@ ID_COL_DATA_OR=(CDATA_OR_NUMBER(:,1)+CDATA_OR_NUMBER(:,2)+CDATA_OR_NUMBER(:,3));
 
 %read image from folder
 
-AA= imread('C:\Users\GBenedetti\Google Drive\TESI LM\tesi\tps\FOSTRAD\aerothermal-master\aerothermal-master\Front_Shuttle.png');   
+AA= imread('Front_Shuttle.png');   
 
 figure('units','normalized','outerposition',[0 0 1 1])
 
