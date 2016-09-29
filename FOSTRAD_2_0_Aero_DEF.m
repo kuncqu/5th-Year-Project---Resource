@@ -5,6 +5,7 @@ warning('off')
 tic
 addpath('altmany-export_fig-2bad961');
 addpath('external functions');
+addpath('ATMOSFERA GENERALE');
                                                         %% %%%%% FOSTRAD   V. 2.0 %%%%%%%%%
                                          
 %%%%% Read in the STL file for the Geometry %%%%%%%%%
