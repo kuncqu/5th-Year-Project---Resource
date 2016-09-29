@@ -3,14 +3,14 @@ close all
 clc
 warning('off')
 tic
-addpath('C:\Users\GBenedetti\Google Drive\TESI LM\tesi\tps\FOSTRAD\FOSTRAD 2.0\altmany-export_fig-2bad961');
-addpath('C:\Users\GBenedetti\Google Drive\TESI LM\tesi\tps\FOSTRAD\FOSTRAD 2.0\external functions');
+addpath('altmany-export_fig-2bad961');
+addpath('external functions');
                                                         %% %%%%% FOSTRAD   V. 2.0 %%%%%%%%%
                                          
 %%%%% Read in the STL file for the Geometry %%%%%%%%%
 % [points,triangles,tri norms]
 
-[V, F, N] = import_stl_fast('C:\Users\GBenedetti\Google Drive\TESI LM\tesi\tps\FOSTRAD\FOSTRAD 2.0\CAD MODELS\shuttle_noRS25_ascii.stl',1);
+[V, F, N] = import_stl_fast('CAD MODELS/shuttle_noRS25_ascii.stl',1);
 
 %[F,V,N] = stlread('C:\Users\GBenedetti\Google Drive\TESI LM\tesi\tps\FOSTRAD\aerothermal-master\aerothermal-master\CAD MODELS\GOCE_simplified_FOSTRAD_coarse.stl');
 
@@ -335,7 +335,7 @@ CDATA_FIN_NUMBER=zeros(size(AA,1),size(AA,2));
 % eliminare elementi uguali CDATA_FIN_NUMBER
 clear a
 a = unique(CDATA_FIN_NUMBER);
-out = [a,histc(CDATA_FIN_NUMBER(:),a)]; % mi dà i numeri asssociati ai colori che compaiono nell'immagine e la loro frequenza (n pixel con quel colore)
+out = [a,histc(CDATA_FIN_NUMBER(:),a)]; % mi dï¿½ i numeri asssociati ai colori che compaiono nell'immagine e la loro frequenza (n pixel con quel colore)
 CDATA_FIN_NUMBER_UNICI=out(:,1);
 CDATA_FIN_NUMBER_UNICI(end, :) = [];    % rimozione colore bianco (sfondo)
 
