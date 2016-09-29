@@ -31,7 +31,7 @@ if hDiff(1)~=1e3
 end
 
 Alt = Alt/1e3;
-hmin=mix(Alt); %km
+hmin=min(Alt); %km
 minHindex = round(hmin-0.5)+1;
 hmax=max(Alt); %km
 maxHindex = round(hmax-0.5)+1;
