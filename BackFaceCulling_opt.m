@@ -149,7 +149,7 @@ ID_COL_OR=colornumber(:,1)+colornumber(:,2)+colornumber(:,3); %ID original color
 %generate patch
 
 figure(3)
-% set(figure(3), 'visible','off')
+set(figure(3), 'visible','off')
 p=patch('Faces',F,'Vertices',V,'FaceVertexCdata',myColorMap./255,'FaceColor','flat','LineStyle','none');
 hold on
 rotate(p,directionZ,beta)
