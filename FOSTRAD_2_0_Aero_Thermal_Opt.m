@@ -147,17 +147,16 @@ bb=1;
 
 % Rearranging the database inputs to match FOSTRAD inputs
 %He O N2 O2 Ar H N [1/m^3] gas densities
-rhoi = [NRLMSISE00((Hcont(1,1)+1):(Hfmf(end)+1),6) NRLMSISE00((Hcont(1,1)+1):(Hfmf(end)+1),2:4) NRLMSISE00((Hcont(1,1)+1):(Hfmf(end)+1),7:9)]*1E6;
-Ti = NRLMSISE00((Hcont(1,1)+1):(Hfmf(end)+1),5);
-
+rhoi = [NRLMSISE00(:,6) NRLMSISE00(:,2:4) NRLMSISE00(:,7:9)]*1E6;
+Ti = NRLMSISE00(:,5);
 
 %inputs corresponding to the input altitudes interpolated with the
 %continuum and FMF reference
-hDB = (Hcont(1):1:Hfmf(end))'; %altitudes used for the sample points interpolation on the database
+hDB = NRLMSISE00(:,1); %altitudes used for the sample points interpolation on the database
 if length(hDB) > 1
-    Ti = interp1(hDB,Ti(:,1),h,'spline');
+    Ti = interp1(hDB,Ti(:,1),h,'pchip');
     for i=1:7
-        rhotemp(:,i) = interp1(hDB,rhoi(:,i),h,'spline');
+        rhotemp(:,i) = interp1(hDB,rhoi(:,i),h,'pchip');
     end
     rhoi = rhotemp;
 end
